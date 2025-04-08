@@ -1,0 +1,29 @@
+{% extends "index.html" %}
+
+{% block title %}Resultados de búsqueda{% endblock %}
+
+{% block content %}
+<h2>Resultados para "{{ query }}"</h2>
+
+{% if books %}
+    <h3>Libros</h3>
+    <ul>
+    {% for book in books %}
+        <li>{{ book.title }}</li>
+    {% endfor %}
+    </ul>
+{% endif %}
+
+{% if authors %}
+    <h3>Autores</h3>
+    <ul>
+    {% for author in authors %}
+        <li>{{ author.name }}</li>
+    {% endfor %}
+    </ul>
+{% endif %}
+
+{% if not books and not authors %}
+    <p>No se encontraron resultados.</p>
+{% endif %}
+{% endblock %}
