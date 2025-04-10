@@ -17,8 +17,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 
-from authors.views import *
-from books.views import *
+from apps.authors.views import *
+from apps.books.views import *
 from crud_cbv.views import SearchView
 
 
