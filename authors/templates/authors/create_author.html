@@ -1,0 +1,16 @@
+{% extends 'index.html' %}
+
+{% block title %} | Registro de autor {% endblock title %}
+
+{% block content %}
+    <h1 class="mb-4">Registrar un nuevo autor</h1>
+
+    <form method="POST">
+        {% csrf_token %}
+        <div class="mb-3">
+            {{ form.as_p }}
+        </div>
+        <button type="submit" class="btn btn-primary">Guardar</button>
+        <a href="{% url 'authors:author_list' %}" class="btn btn-secondary">Cancelar</a>
+    </form>
+{% endblock content %}
